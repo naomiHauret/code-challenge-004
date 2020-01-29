@@ -6,13 +6,15 @@ import { GithubRepositoriesProvider } from "contexts/GithubRepositories"
 import Layout from "components/Layout"
 import routes from "routes"
 
+const bearer = `bearer ${process.env.GITHUB_API_TOKEN}`
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {
-    Authorization: "bearer 291eff05bdfc504d06b72f85f9c89958c2ffc5e3",
+    Authorization: bearer,
   },
 })
 
+console.log(process.env.GITHUB_API_TOKEN)
 const Root = () => (
   <ApolloProvider client={client}>
     <GithubRepositoriesProvider>

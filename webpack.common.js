@@ -3,8 +3,9 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const exludedFolders = [path.join(__dirname, "node_modules")]
 const CopyPlugin = require('copy-webpack-plugin');
-
+const Dotenv = require('dotenv-webpack')
 let plugins = [
+  new Dotenv(),
   new MiniCssExtractPlugin({
     filename: "[name].[hash].css",
   }),
