@@ -1,8 +1,11 @@
 A web app to get all repositories from a Github user. Consumes Github GraphQL API.
 
 ## Pre-requisites
+* Have a github account
 * `node` version >= 11
 * `npm` version >= 6
+* Generate your personal access token for Github GraphQL API
+* Create a `.env` file at the root of the project folder, copy the content of `.env.dist` and add your access token to the `GITHUB_API_TOKEN` field.
 
 ## Deployment pre-requisites
 * Have a `now` account
