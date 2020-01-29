@@ -1,0 +1,26 @@
+/*! /* purgecss start ignore */
+.listGrid {
+  --colNumber: 1;
+  grid-template-columns: repeat(var(--colNumber), [col] 1fr);
+  @media (--screen-sm) {
+    --colNumber: 2;
+  }
+  @media (--screen-md) {
+    --colNumber: 3;
+  }
+}
+
+.listGrid li {
+  &:nth-child(n + 3) {
+    @media (--screen-sm-only) {
+      grid-column: col / span var(--colNumber);
+    }
+  }
+
+  &:nth-child(n + 4) {
+    @media (--screen-md) {
+      grid-column: col / span var(--colNumber);
+    }
+  }
+}
+/*! /* purgecss end ignore */

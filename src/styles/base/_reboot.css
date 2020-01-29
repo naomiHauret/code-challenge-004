@@ -1,0 +1,37 @@
+/*
+  Normalize
+*/
+@import-normalize;
+
+/*
+  Custom selectors
+*/
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+/*
+  Base styles
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth-scroll;
+}
+
+/* Reset */
+ul {
+  @apply .list-none;
+}
+
+:--heading,
+p,
+ul,
+li,
+figure,
+figcaption {
+  @apply .m-0;
+  @apply .p-0;
+}
