@@ -22,7 +22,7 @@ Object.keys(radius).map((size) => (rSizes[size] = toRem(radius[size])))
 
 
 const spacings = {}
-for (let i = 0; i < 250; i = i + 5) {
+for (let i = 0; i < 450; i = i + 5) {
   spacings[i] = toRem(i)
 }
 

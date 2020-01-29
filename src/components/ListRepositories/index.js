@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { useGithubRepositories } from "hooks/useGithubRepositories"
 import Repository from "components/Repository"
 import styles from "./index.module.css"
 
