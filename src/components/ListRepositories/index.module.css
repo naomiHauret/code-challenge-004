@@ -10,6 +10,10 @@
   }
 }
 
+.listGrid a:any-link {
+  color: unset;
+}
+
 .listGrid li {
   &:nth-child(n + 3) {
     @media (--screen-sm-only) {

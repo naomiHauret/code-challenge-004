@@ -1,4 +1,3 @@
-import React, { useState } from "react"
 import { useQuery } from "@apollo/react-hooks"
 import { GET_FIRST_SET, GET_MORE } from "queries/githubRepositories"
 

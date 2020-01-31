@@ -1,5 +1,5 @@
 import React, { useContext, Fragment } from "react"
-import { GithubRepositoriesContext, MAX_TO_SHOW } from "contexts/GithubRepositories"
+import { GithubRepositoriesContext } from "contexts/GithubRepositories"
 import ListRepositories from "components/ListRepositories"
 import Container from "components/Container"
 import BarSort from "./BarSort"
@@ -39,22 +39,27 @@ const Repositories = (props) => {
         </Container>
       </div>
       <Container contained={true} staticStyles="pt-350 md:pt-200">
-        <ListRepositories data={repositories} />
-
-        <div className={`${totalRepositories > 0 ? "mt-40" : ""} flex justify-center`}>
-          {canShowMore && !loading ? (
-            <button
-              onClick={fetchMore}
-              className="cursor-pointer ml-20 py-10 px-30 text-18 font-bold py-5 px-20 rounded-full text-black_000 border-0 bg-yellow_000"
-            >
-              Display more
-            </button>
-          ) : totalRepositories > 0 ? (
-            <div className="italic text-gray_200 text-center">End of results</div>
-          ) : (
-            <div className="italic text-gray_200 text-center">No repositories</div>
-          )}
-        </div>
+        {loading ? (
+          <div className="text-gray_200">Loading repositories...</div>
+        ) : (
+          <Fragment>
+            <ListRepositories data={repositories} username={user} />
+            <div className={`${totalRepositories > 0 ? "mt-40" : ""} flex justify-center`}>
+              {canShowMore && !loading ? (
+                <button
+                  onClick={fetchMore}
+                  className="cursor-pointer ml-20 py-10 px-30 text-18 font-bold py-5 px-20 rounded-full text-black_000 border-0 bg-yellow_000"
+                >
+                  Display more
+                </button>
+              ) : totalRepositories > 0 ? (
+                <div className="italic text-gray_200 text-center">End of results</div>
+              ) : (
+                <div className="italic text-gray_200 text-center">No repositories</div>
+              )}
+            </div>
+          </Fragment>
+        )}
       </Container>
     </div>
   )

@@ -14,7 +14,6 @@ const client = new ApolloClient({
   },
 })
 
-console.log(process.env.GITHUB_API_TOKEN)
 const Root = () => (
   <ApolloProvider client={client}>
     <GithubRepositoriesProvider>

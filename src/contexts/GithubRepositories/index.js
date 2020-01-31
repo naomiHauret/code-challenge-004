@@ -1,20 +1,10 @@
 import React, { createContext, useState } from "react"
 import { useGithubRepositories } from "hooks/useGithubRepositories"
+import { SORT_OPTIONS } from "utils/options"
 
 export const GithubRepositoriesContext = createContext({})
 export const MAX_TO_SHOW = 20
-const SORT_OPTIONS = {
-  fields: [
-    { value: "NAME", label: "Name" },
-    { value: "STARGAZERS", label: "Stars" },
-    { value: "CREATED_AT", label: "Creation date" },
-    { value: "UPDATED_AT", label: "Last update" },
-  ],
-  orders: [
-    { value: "ASC", label: "Ascending" },
-    { value: "DESC", label: "Descending" },
-  ],
-}
+
 export const GithubRepositoriesProvider = ({ children }) => {
   const [user, setUser] = useState("naomihauret")
   const [sortField, setSortField] = useState("UPDATED_AT")
